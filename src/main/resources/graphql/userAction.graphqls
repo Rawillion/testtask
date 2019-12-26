@@ -1,0 +1,31 @@
+type userOutputInfoDto
+{
+    firstName: String
+    lastName: String
+    email: String
+    birthday: Long
+    newsCategories: [Int]
+    image: String
+    gender: String
+    registrationDate: Long
+}
+
+input userInputInfoDto
+{
+    firstName: String
+    lastName: String
+    email: String
+    birthday: Long
+    newsCategories: [Long]
+    image: String
+    imageName: String
+    gender: String
+}
+
+type Mutation {
+    updateUser(updatingInfo: userInputInfoDto): String
+}
+
+type Query{
+    currentUser: userOutputInfoDto
+}
