@@ -22,10 +22,31 @@ input userInputInfoDto
     gender: String
 }
 
+type newsOutputDto
+{
+    title: String
+    text: String
+    newsCategory: Long
+    image: String
+    creationDate: Long
+}
+
+input newsInputDto
+{
+    id: Long
+    title: String
+    text: String
+    newsCategory: Long
+    imageName: String
+    image: String
+}
+
 type Mutation {
     updateUser(updatingInfo: userInputInfoDto): String
+    updateOrCreateNews(newsInput: newsInputDto): String
 }
 
 type Query{
     currentUser: userOutputInfoDto
+    getNews(id: Long): newsOutputDto
 }

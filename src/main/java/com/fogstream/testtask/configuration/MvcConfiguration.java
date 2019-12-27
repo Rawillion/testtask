@@ -33,6 +33,7 @@ public class MvcConfiguration implements WebMvcConfigurer
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/newslist").setViewName("newslist");
+		registry.addViewController("/vieweditnews").setViewName("vieweditnews");
 	}
 
 }

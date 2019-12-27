@@ -42,7 +42,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
 		http.authorizeRequests()
-			.antMatchers("/editprofile", "/resources/**", "/", "/login", "/newslist", "/newsCategories").permitAll()
+			.antMatchers("/editprofile", "/resources/**", "/", "/login", "/newslist", "/newsCategories", "/vieweditnews").permitAll()
 			.antMatchers(HttpMethod.POST, "/user/**").permitAll()
 			.anyRequest().authenticated()
 			.and()

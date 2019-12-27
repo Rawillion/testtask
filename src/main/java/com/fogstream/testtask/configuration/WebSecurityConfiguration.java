@@ -42,7 +42,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
 	protected void configure(HttpSecurity http) throws Exception
 	{
 		http.authorizeRequests()
-			.antMatchers("/editprofile", "/resources/**", "/", "/login", "/newslist", "/newsCategories").permitAll()
+			.antMatchers("/editprofile", "/resources/**", "/", "/login", "/newslist", "/newsCategories", "/vieweditnews").permitAll()
 			.antMatchers(HttpMethod.POST, "/user").permitAll()
 			.anyRequest().authenticated()
 			.and()

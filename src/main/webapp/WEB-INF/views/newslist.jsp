@@ -12,6 +12,7 @@
     <title>News List</title>
     <a href="/" id="logout" target="_self">Logout</a>
     <a href="/editprofile" id="profile" target="_self">To Profile</a>
+    <a href="/vieweditnews?action=edit&id=-1" target="_self">Create New</a>
 </head>
 <body>
 <h1>News List</h1>
@@ -104,6 +105,9 @@
         html += '</div>';
         html += '<div>' + data.text + '</div>';
         html += '<div>' + moment(data.date_created).format('YYYY-MM-DD') + '</div>';
+        nid = data._links.self.href.split('/')[data._links.self.href.split('/').length - 1];
+        html += '<div>' + '<a href="/vieweditnews?action=view&id=' + nid + '" target="_self">View</a>' + '</div>';
+        html += '<div>' + '<a href="/vieweditnews?action=edit&id=' + nid + '" target="_self">Edit</a>' + '</div>';
         html += '</div>';
         return html;
     }
@@ -113,7 +117,7 @@
         }
 
         while(string.charAt(string.length-1)==charToRemove) {
-            string = string.substring(0,string.length-1);
+            string = string.substring(0, string.length - 1);
         }
 
         return string;
